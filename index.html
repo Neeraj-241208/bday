@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5d9c2">
+<title>Happy Birthday, Vismaya ✨</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- INTRO / GIFT -->
+<div id="intro" class="intro">
+  <div class="intro-lights"></div>
+  <div class="intro-envelope">
+    <div class="envelope-top"></div>
+    <div class="envelope-body">
+      <div class="seal">✦</div>
+      <p class="overline">A LITTLE SURPRISE</p>
+      <h1>For Vismaya</h1>
+      <p>Something cheerful, fun and birthday-sized is waiting inside.</p>
+      <button id="openBtn" class="btn btn-main">Open the surprise <span>→</span></button>
+      <small>Turn your volume up • music begins after you click</small>
+    </div>
+  </div>
+</div>
+
+<audio id="music" loop preload="auto">
+  <source src="assets/birthday-music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- GLOBAL FX -->
+<div id="confetti" class="confetti"></div>
+<div id="toast" class="toast"></div>
+<div id="cursorSparkles"></div>
+
+<main id="app" class="app" aria-hidden="true">
+
+<!-- HERO -->
+<section class="hero section">
+  <div class="hero-bg-orb orb1"></div>
+  <div class="hero-bg-orb orb2"></div>
+
+  <div class="fairy-lights" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <div class="balloons" aria-hidden="true">
+    <button class="balloon balloon1" data-pop="1">🎈</button>
+    <button class="balloon balloon2" data-pop="2">🎈</button>
+    <button class="balloon balloon3" data-pop="3">🎈</button>
+    <button class="balloon balloon4" data-pop="4">🎈</button>
+    <button class="balloon balloon5" data-pop="5">🎈</button>
+    <button class="balloon balloon6" data-pop="6">🎈</button>
+  </div>
+
+  <div class="hero-content">
+    <div class="top-pill">✦ TODAY IS YOUR DAY ✦</div>
+    <p class="eyebrow">SPECIAL BIRTHDAY EDITION</p>
+    <div id="countdownReveal" class="countdown-reveal">3</div>
+    <h1 class="birthday-title" aria-label="Happy Birthday Vismaya">
+      <span class="happy">HAPPY BIRTHDAY</span>
+      <span class="name">VISMAYA</span>
+    </h1>
+    <p class="hero-sub">More laughter. More adventures. More cake.<br>And absolutely no boring birthday energy. 🎉</p>
+    <div class="hero-actions">
+      <a class="btn btn-main" href="#memories">Let's celebrate <span>↓</span></a>
+      <button id="surpriseBtn" class="btn btn-soft">Surprise me ✨</button>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span></span>scroll down for the good stuff</div>
+</section>
+
+<!-- PERSONAL NOTE -->
+<section class="note section reveal">
+  <div class="section-tag">A LITTLE NOTE</div>
+  <div class="note-card tilt">
+    <div class="corner-stars">✦ ✧ ✦</div>
+    <h2>Dear Vismaya,</h2>
+    <p>
+      Today is officially your day, Vismaya — so you're allowed extra cake, extra laughter,
+      extra photos and a completely unreasonable amount of birthday happiness. 😄
+    </p>
+    <p>
+      Here's to the little moments that turn into great memories, the fun friend moments,
+      the random adventures that become stories, and all the good things
+      still waiting around the corner.
+    </p>
+    <div class="note-sign">Keep smiling. Keep being wonderfully you. ✨</div>
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section id="memories" class="memories section">
+  <div class="section-tag reveal">MEMORIES</div>
+  <h2 class="section-title reveal">A little birthday memory,<br><em>just for you.</em></h2>
+  <p class="section-sub reveal">Scratch the gift card completely to reveal your birthday surprise. 🎁</p>
+
+  <div class="memory-grid single-memory">
+    <article class="memory-card gift-memory reveal tilt">
+      <div class="card-head"><span>A LITTLE BIRTHDAY GIFT</span><b>🎀</b></div>
+      <div class="gift-photo-frame">
+        <div class="gift-photo-inner">
+          <img src="assets/vismaya-birthday-memory.jpg" alt="A special birthday photo of Vismaya">
+          <canvas class="scratch"></canvas>
+          <div class="scratch-label gift-label">🎁 SCRATCH TO OPEN 🎁<small>A tiny surprise for a very good friend</small></div>
+          <div class="unlocked">PHOTO UNLOCKED ✦</div>
+          <div id="photoCelebration" class="photo-celebration" aria-hidden="true">
+            <div class="celebration-sparkles">✦ ✧ ✦</div>
+            <div class="celebration-title">HAPPY BIRTHDAY!</div>
+            <div class="celebration-name">VISMAYA</div>
+            <p>🎂 A little birthday wish for an amazing friend 🎀</p>
+            <button id="closePhotoCelebration" class="btn btn-soft" type="button">See the photo ✨</button>
+          </div>
+        </div>
+        <span class="frame-corner fc-tl">✦</span><span class="frame-corner fc-tr">✦</span>
+        <span class="frame-corner fc-bl">✦</span><span class="frame-corner fc-br">✦</span>
+      </div>
+      <div class="memory-caption">A little memory, wrapped like a birthday gift — just for a good friend. ✨</div>
+    </article>
+  </div>
+
+</section>
+
+<!-- FINAL -->
+<section id="finale" class="finale section">
+  <div class="finale-stars">✦　✧　✦　✧　✦</div>
+  <p class="wait" id="waitText">ONE LAST LITTLE WISH</p>
+  <h2 id="finalTitle">One more little<br><em>birthday wish.</em></h2>
+  <button id="finalCelebrate" class="btn btn-main">Open your birthday wish 🎁</button>
+  <div id="finalMessage" class="final-message">
+    <div class="final-ribbon">✦ SPECIAL BIRTHDAY ANNOUNCEMENT ✦</div>
+    <h3>HAPPY BIRTHDAY,<br><span>VISMAYA!</span></h3>
+    <p>May this year bring you plenty of reasons to laugh, learn, explore, celebrate and make memories.</p>
+    <div class="final-fire">🎈 🎉 ✨ 🎂 ✨ 🎉 🎈</div>
+    <button id="replay" class="btn btn-soft">Replay the surprise ↻</button>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-ribbon">HAPPY BIRTHDAY, VISMAYA ✦</div>
+  <p>Made with a little birthday magic for a very special friend. ✦</p>
+</footer>
+
+<button id="musicBtn" class="music" aria-label="Toggle music">♫ <span>Music on</span><i class="eq"><b></b><b></b><b></b><b></b></i></button>
+</main>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+  const intro = $('#intro'), app = $('#app'), music = $('#music');
+
+  function toast(msg){
+    const t=$('#toast'); t.textContent=msg; t.classList.add('show');
+    clearTimeout(window._toast); window._toast=setTimeout(()=>t.classList.remove('show'),2400);
+  }
+
+  function confettiBurst(n=100){
+    const box=$('#confetti'); box.innerHTML='';
+    const chars=['✦','✧','◆','★','•','●','◇'];
+    for(let i=0;i<n;i++){
+      const x=document.createElement('span');
+      x.textContent=chars[Math.floor(Math.random()*chars.length)];
+      x.style.left=Math.random()*100+'vw';
+      x.style.setProperty('--x',((Math.random()-.5)*300)+'px');
+      x.style.setProperty('--r',((Math.random()*1000)-500)+'deg');
+      x.style.setProperty('--d',(1.5+Math.random()*3.4)+'s');
+      x.style.setProperty('--delay',(Math.random()*.5)+'s');
+      box.appendChild(x);
+    }
+    setTimeout(()=>box.innerHTML='',5500);
+  }
+
+  function miniBurst(x,y){
+    for(let i=0;i<16;i++){
+      const p=document.createElement('span'); p.className='mini-particle'; p.textContent=['✦','•','◆'][i%3];
+      p.style.left=x+'px'; p.style.top=y+'px';
+      p.style.setProperty('--a',(Math.PI*2*i/16)+'rad');
+      document.body.appendChild(p);
+      setTimeout(()=>p.remove(),800);
+    }
+  }
+
+  // Intro: countdown + music.
+  $('#openBtn').addEventListener('click', async () => {
+    intro.classList.add('leaving');
+    app.setAttribute('aria-hidden','false');
+    document.body.classList.add('started');
+    try { await music.play(); } catch(e){}
+    let n=3; const c=$('#countdownReveal'); c.textContent=n;
+    const timer=setInterval(()=>{
+      n--; if(n>0){c.textContent=n; c.animate([{transform:'scale(.7)',opacity:0},{transform:'scale(1)',opacity:1}],{duration:450})}
+      else {clearInterval(timer); c.textContent='✦'; c.classList.add('done'); confettiBurst(125)}
+    },650);
+    setTimeout(()=>intro.remove(),900);
+  });
+
+  // Surprise button.
+  $('#surpriseBtn').addEventListener('click',()=>{ confettiBurst(90); toast('🎉 Surprise mode activated!'); });
+
+  // Music.
+  $('#musicBtn').addEventListener('click', async ()=>{
+    if(music.paused){ await music.play(); $('#musicBtn').innerHTML='♫ <span>Music on</span><i class="eq"><b></b><b></b><b></b><b></b></i>'; }
+    else {music.pause(); $('#musicBtn').innerHTML='♫ <span>Music off</span><i class="eq"><b></b><b></b><b></b><b></b></i>'; }
+  });
+
+  // Scratch cards.
+  const scratchers=[];
+  $$('.scratch').forEach(canvas=>{
+    const frame=canvas.parentElement, ctx=canvas.getContext('2d',{willReadFrequently:true});
+    let drawing=false, unlocked=false;
+    function size(){
+      if(unlocked)return;
+      const r=frame.getBoundingClientRect(), d=Math.min(devicePixelRatio||1,2);
+      canvas.width=r.width*d; canvas.height=r.height*d; canvas.style.width=r.width+'px'; canvas.style.height=r.height+'px';
+      ctx.setTransform(d,0,0,d,0,0);
+      const g=ctx.createLinearGradient(0,0,r.width,r.height);
+      g.addColorStop(0,'#a97c38');g.addColorStop(.5,'#d8b66e');g.addColorStop(1,'#936b32');
+      ctx.globalCompositeOperation='source-over';ctx.fillStyle=g;ctx.fillRect(0,0,r.width,r.height);
+      ctx.fillStyle='rgba(255,249,226,.12)';
+      for(let x=-r.height;x<r.width;x+=25){ctx.save();ctx.translate(x,0);ctx.rotate(-.55);ctx.fillRect(0,0,8,r.height*2);ctx.restore();}
+      ctx.fillStyle='rgba(65,40,20,.5)';ctx.textAlign='center';ctx.font='800 14px system-ui';
+      ctx.fillText('SCRATCH HERE',r.width/2,r.height/2-5);ctx.font='11px system-ui';ctx.fillStyle='rgba(65,40,20,.38)';
+      ctx.fillText('drag across the card',r.width/2,r.height/2+16);
+    }
+    function draw(e){
+      if(unlocked)return;
+      const r=canvas.getBoundingClientRect(), p=e.touches?e.touches[0]:e;
+      const x=p.clientX-r.left,y=p.clientY-r.top;
+      ctx.save();ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,38,0,Math.PI*2);ctx.fill();ctx.restore();
+      if(Math.random()<.25) miniBurst(p.clientX,p.clientY);
+      if(check()){unlock();}
+    }
+    function check(){
+      const d=ctx.getImageData(0,0,canvas.width,canvas.height).data;let clear=0,total=0;
+      for(let i=3;i<d.length;i+=80){total++;if(d[i]<35)clear++}
+      return clear/total>.78;
+    }
+    function unlock(){
+      if(unlocked)return;
+      unlocked=true;
+      // Clear the remaining scratch layer once the card is fully opened.
+      ctx.save();ctx.globalCompositeOperation='destination-out';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.restore();
+      canvas.classList.add('gone');
+      canvas.style.pointerEvents='none';
+      frame.classList.add('unlocked');
+      setTimeout(()=>{
+        const celebration=document.getElementById('photoCelebration');
+        if(celebration){celebration.classList.add('show');celebration.setAttribute('aria-hidden','false');}
+        confettiBurst(170);
+        toast('🎉 Birthday surprise unlocked!');
+      },500);
+    }
+    canvas.addEventListener('pointerdown',e=>{drawing=true;canvas.setPointerCapture(e.pointerId);draw(e)});
+    canvas.addEventListener('pointermove',e=>{if(drawing)draw(e)});
+    canvas.addEventListener('pointerup',()=>drawing=false);canvas.addEventListener('pointercancel',()=>drawing=false);
+    window.addEventListener('resize',size);size();
+    scratchers.push(unlock);
+  });
+
+  // Scroll reveals.
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});
+  },{threshold:.12});
+  $$('.reveal').forEach(el=>obs.observe(el));
+
+  // Tilt cards.
+  $$('.tilt').forEach(card=>{
+    card.addEventListener('pointermove',e=>{
+      if(matchMedia('(max-width: 760px)').matches)return;
+      const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(900px) rotateX(${(-y*2.2).toFixed(2)}deg) rotateY(${(x*2.2).toFixed(2)}deg) translateY(-3px)`;
+    });
+    card.addEventListener('pointerleave',()=>{card.style.transform=''});
+  });
+
+  // Cursor sparkles.
+  let last=0;
+  document.addEventListener('pointermove',e=>{
+    const now=Date.now();if(now-last<70)return;last=now;
+    const s=document.createElement('span');s.textContent='✦';s.className='cursor-spark';
+    s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),700);
+  });
+
+  const closePhotoCelebration=$('#closePhotoCelebration');
+  if(closePhotoCelebration){
+    closePhotoCelebration.addEventListener('click',()=>{
+      const celebration=$('#photoCelebration');
+      celebration.classList.remove('show');
+      celebration.setAttribute('aria-hidden','true');
+    });
+  }
+
+  // Final reveal.
+  $('#finalCelebrate').addEventListener('click',()=>{
+    $('#finalTitle').classList.add('hide');$('#waitText').classList.add('hide');$('#finalCelebrate').classList.add('hide');
+    $('#finalMessage').classList.add('show');confettiBurst(220);
+    setTimeout(()=>toast('🎂 HAPPY BIRTHDAY, VISMAYA!'),600);
+  });
+
+  $('#replay').addEventListener('click',()=>{
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>
